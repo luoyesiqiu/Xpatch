@@ -9,15 +9,7 @@ Xpatch用来重新签名打包Apk文件，使重打包后的Apk能加载安装�
 Xpatch的原理是对Apk文件进行二次打包，重新签名，并生成一个新的apk文件。
 在Apk二次打包过程中，插入加载Xposed插件的逻辑，这样，新的Apk文件就可以加载任意Xposed插件，从而实现免Root Hook任意App的Java代码。
 
-Hook框架底层使用的是Lody的whale，支持的平台架构有：ARM/THUMB、ARM64，支持的andrid版本大致有（其他未测试）：
-
- - Android 5.0.0
- - Android 5.1.1
- - Android 6.0
- - Android 6.0.1
- - Android 7.1.2
- - Android 8.1.0
- - Android 9.0.0
+Hook框架底层使用的是Lody的whale，支持的平台架构有：ARM/THUMB、ARM64，支持的android版本大致有（其他未测试）：android 5.0-android 9.0
 
 ## Xpatch工具包下载
 [点击我下载最新的Xpatch Jar包][1]  
@@ -122,7 +114,7 @@ liubaoyua.customtext#文本自定义
 
 需要禁用某个插件，只需要修改此文件，在该插件包名前面增加一个`#`号即可。
 
-比如，需要禁用`畅玩微信`和`文本自定义`两个插件，只需要修改该文本文件，增加两个`#`号即可：
+比如，需要禁用`畅玩微信`和`文本自定义`两个插件，只需要修改该文本文件，增加一个`#`号即可：
 
 ```
 com.blanke.mdwechat#MDWechat
@@ -143,8 +135,7 @@ It's so easy !!!
 
 ## 可用的Xposed模块示例
 
- - [畅玩微信][6]
- - [微信巫师][7]
+ - [腾讯视频，爱奇艺去广告插件-RemoveVideoAdsPlugin](https://github.com/WindySha/RemoveVideoAdsPlugin)
  - [MDWechat][8]
  - [文本自定义][9]
  - ...
@@ -185,10 +176,6 @@ Xpatch是基于apk二次打包实现的，而且使用到了dex2Jar工具，因�
 3. hook框架使用的是lody的[Whale框架][5]，此框架存在一些不稳定性，对少数方法的hook会导致崩溃，并且在某些机型上hook也会崩溃。  
 4. Xposed Hook框架暂时不支持Dalvik虚拟机。  
 5. 暂时不支持Xposed插件中的资源Hook。
-
-## 支持我
-  如果Xpatch对你有点帮助，欢迎Star, Fork or Donate。  
- ![](https://upload-images.jianshu.io/upload_images/1639238-04130f58272eb505.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/200)
  
 ## Technology Discussion
 **QQ Group: 977513757**  
